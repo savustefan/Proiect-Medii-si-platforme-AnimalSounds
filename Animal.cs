@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace AnimalSounds
 {
-    internal class Animal
+    public class Animal
     {
-        public virtual void SunetAnimal()
-        {
-            Console.WriteLine("Animal makes sound");
-        }
+        public string animal { get; set; }
+        public string sound { get; set; }
 
+        public virtual void AnimalSounds()
+        {
+            Console.WriteLine($"{animal} emits a sound");
+        }
     }
 }

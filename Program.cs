@@ -1,59 +1,63 @@
-﻿namespace AnimalSounds
+﻿using System.Xml.Linq;
+
+namespace AnimalSounds
 {
-    class Porc : Animal
-    {
-        public override void SunetAnimal()
-        {
-            Console.WriteLine("Porc makes: oink,oink.");
-        }
-    }
-
-    class Caine : Animal
-    {
-        public override void SunetAnimal()
-        {
-            Console.WriteLine("Câine makes: woof, woof");
-        }
-    }
-
-
-    class Pisica : Animal
-    {
-        public override void SunetAnimal()
-        {
-            Console.WriteLine("Pisică makes: miau.");
-        }
-    }
-
-
-    class Lup : Animal
-    {
-        public override void SunetAnimal()
-        {
-            Console.WriteLine("Delfin makes: WOOOOOF!");
-        }
-    }
-
     class Program
     {
-        static void Main(string[] args)
+        class Porc : Animal
         {
-            Animal caine = new Caine();
-            Animal porc = new Porc();
-            Animal lup = new Lup();
-            Animal pisica = new Pisica();
-
-            List<Animal> animale = new List<Animal>();
-            animale.Add(caine);
-            animale.Add(porc);
-            animale.Add(lup);
-            animale.Add(pisica);
-
-
-            foreach (Animal animal in animale)
+            public override void AnimalSounds()
             {
-                animal.SunetAnimal();
+                Console.WriteLine($"{animal} makes: {sound}.");
             }
         }
-    }
-}
+
+        class Caine : Animal
+        {
+            public override void AnimalSounds()
+            {
+                Console.WriteLine($"{animal} makes: {sound}");
+            }
+        }
+
+        class Pisica : Animal
+        {
+            public override void AnimalSounds()
+            {
+                Console.WriteLine($"{animal} makes: {sound}.");
+            }
+        }
+
+        class Lup : Animal
+        {
+            public override void AnimalSounds()
+            {
+                Console.WriteLine($"{animal} makes: {sound}!");
+            }
+        }
+
+       
+            static void Main(string[] args)
+            {
+                Animal caine = new Caine { animal = "Câine", sound = "woof, woof" };
+                Animal porc = new Porc { animal = "Porc", sound = "oink, oink" };
+                Animal lup = new Lup { animal = "Lup", sound = "WOOOOOF" };
+                Animal pisica = new Pisica { animal = "Pisică", sound = "miau" };
+
+                List<Animal> animale = new List<Animal>
+            {
+                caine,
+                porc,
+                lup,
+                pisica
+            };
+
+                foreach (Animal animal in animale)
+                {
+                    animal.AnimalSounds();
+                }
+
+                Console.ReadLine();
+            }
+        }
+ }
