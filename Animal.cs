@@ -7,14 +7,14 @@ using System.Xml.Linq;
 
 namespace AnimalSounds
 {
-    public class Animal
+    public abstract class Animal
     {
-        public string animal { get; set; }
-        public string sound { get; set; }
+        public string Name { get; set; }
+        public string Sound { get; set; }
 
         public virtual void AnimalSounds()
         {
-            Console.WriteLine($"{animal} emits a sound");
+            Console.WriteLine($"{Name} emits a sound");
         }
     }
 }

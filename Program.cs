@@ -8,7 +8,7 @@ namespace AnimalSounds
         {
             public override void AnimalSounds()
             {
-                Console.WriteLine($"{animal} makes: {sound}.");
+                Console.WriteLine($"{Name} makes: {Sound}.");
             }
         }
 
@@ -16,7 +16,7 @@ namespace AnimalSounds
         {
             public override void AnimalSounds()
             {
-                Console.WriteLine($"{animal} makes: {sound}");
+                Console.WriteLine($"{Name} makes: {Sound}");
             }
         }
 
@@ -24,7 +24,7 @@ namespace AnimalSounds
         {
             public override void AnimalSounds()
             {
-                Console.WriteLine($"{animal} makes: {sound}.");
+                Console.WriteLine($"{Name} makes: {Sound}.");
             }
         }
 
@@ -32,19 +32,18 @@ namespace AnimalSounds
         {
             public override void AnimalSounds()
             {
-                Console.WriteLine($"{animal} makes: {sound}!");
+                Console.WriteLine($"{Name} makes: {Sound}!");
             }
         }
 
-       
-            static void Main(string[] args)
-            {
-                Animal caine = new Caine { animal = "Câine", sound = "woof, woof" };
-                Animal porc = new Porc { animal = "Porc", sound = "oink, oink" };
-                Animal lup = new Lup { animal = "Lup", sound = "WOOOOOF" };
-                Animal pisica = new Pisica { animal = "Pisică", sound = "miau" };
+        static void Main(string[] args)
+        {
+            Animal caine = new Caine { Name = "Câine", Sound = "woof, woof" };
+            Animal porc = new Porc { Name = "Porc", Sound = "oink, oink" };
+            Animal lup = new Lup { Name = "Lup", Sound = "WOOOOOF" };
+            Animal pisica = new Pisica { Name = "Pisică", Sound = "miau" };
 
-                List<Animal> animale = new List<Animal>
+            List<Animal> animale = new List<Animal>
             {
                 caine,
                 porc,
@@ -52,12 +51,12 @@ namespace AnimalSounds
                 pisica
             };
 
-                foreach (Animal animal in animale)
-                {
-                    animal.AnimalSounds();
-                }
-
+            foreach (Animal animal in animale)
+            {
+                animal.AnimalSounds();
+            }
                 Console.ReadLine();
             }
         }
+
  }
